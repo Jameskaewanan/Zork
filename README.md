@@ -21,3 +21,8 @@ An individual project, developing a text based game, Zork in Java. For my Univer
 
 * __Version 0.2.1 - Map (minor visual improvements and command checks)__
     * minor visual improvements and command checks
+
+* __Version 0.3.0 - Basic Combat__
+    * Added Player and Monster Entities
+    * Added basic (really basic) combat mechanics
+    * Implemented additional commands ("attack")
