@@ -18,13 +18,20 @@ public class PlayCommand extends Command {
 
     @Override
     public String description() {
-        return "Initializes a chosen map and starts the game";
+        return "[ play <map-name> ] Initializes the chosen map and starts the game. Available maps: Spaceship";
     }
 
     @Override
     public void execute(Game game, String[] array){
 
         this.array = array;
+
+        if (array.length <= 1) {
+            System.out.println();
+            System.out.println("Please input a map. Available maps: Spaceship");
+            System.out.println();
+            return;
+        }
 
         try {
             generateMap.map(array);

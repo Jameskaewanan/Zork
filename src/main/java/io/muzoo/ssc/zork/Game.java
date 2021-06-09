@@ -14,7 +14,7 @@ public class Game {
     private CommandFactory factory = new CommandFactory();
 
     private String[] menuCommands = {"help", "play", "load", "exit"};
-    private String[] gameCommands = {"info", "take", "drop", "attack", "go", "map", "autopilot", "quit", "save"};
+    private String[] gameCommands = {"help", "info", "take", "drop", "attack", "go", "map", "autopilot", "quit", "save"};
 
     public static int isGameRunning = 0;
     public static int quitGame = 0;
@@ -36,21 +36,21 @@ public class Game {
 
             Scanner scanner = new Scanner(System.in);
             System.out.print(">> ");
-            String playerInput = scanner.nextLine();
+            String playerInput = scanner.nextLine().toLowerCase();
             String[] words = handler.parse(playerInput);
 
             if (Arrays.asList(menuCommands).contains(words[0])) {
                 Command command = factory.lookupExecute(words);
                 command.execute(this, words);
             } else {
+                System.out.println();
                 System.out.println("Invalid Command");
+                System.out.println();
             }
         }
     }
 
     public void game_loop() {
-
-        System.out.println("Now in game_loop");
 
         factory.RegisteredCommands(this);
 
@@ -63,14 +63,16 @@ public class Game {
 
             Scanner scanner = new Scanner(System.in);
             System.out.print(">> ");
-            String playerInput = scanner.nextLine();
+            String playerInput = scanner.nextLine().toLowerCase();
             String[] words = handler.parse(playerInput);
 
             if (Arrays.asList(gameCommands).contains(words[0])) {
                 Command command = factory.lookupExecute(words);
                 command.execute(this, words);
             } else {
+                System.out.println();
                 System.out.println("Invalid Command");
+                System.out.println();
             }
 
         }

@@ -15,7 +15,7 @@ public class GenerateMap {
 
     public static void map(String[] array) throws FileNotFoundException {
 
-        if (array[1].equals("Spaceship")) {
+        if (array[1].equals("spaceship")) {
             filename = "SpaceshipMap";
             Game.isGameRunning = 1;
         } else {

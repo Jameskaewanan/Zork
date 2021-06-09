@@ -13,7 +13,7 @@ public class QuitCommand extends Command {
 
     @Override
     public String description() {
-        return "quit current game session and return to the menu";
+        return "[ quit ] quit current game session and return to the menu";
     }
 
     @Override

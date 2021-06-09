@@ -27,9 +27,10 @@ public class GameOutput {
         System.out.println("You will traverse dungeons and stuff");
         System.out.println("You will kill things");
         System.out.println();
+        System.out.println("============================================================================================");
+        System.out.println();
         System.out.println("Select from the following options");
-        System.out.println("play <map> - choose a map and play");
-        System.out.println("load <save name> - load a previous save");
+        System.out.println("play | load | help | exit");
         System.out.println();
 
     }
@@ -45,7 +46,12 @@ public class GameOutput {
 
             System.out.println(GenerateMap.roomList.get(0).name);
             System.out.println(GenerateMap.roomList.get(0).description);
-            System.out.println("Possible Movements: " + GenerateMap.roomList.get(0).neighbours);
+
+            System.out.print("north = " + GenerateMap.roomList.get(0).neighbours.get("north") + " | ");
+            System.out.print("east = " + GenerateMap.roomList.get(0).neighbours.get("east") + " | ");
+            System.out.print("south = " + GenerateMap.roomList.get(0).neighbours.get("south") + " | ");
+            System.out.println("west = " + GenerateMap.roomList.get(0).neighbours.get("west") + " ");
+
             System.out.println();
 
         }else {
@@ -55,14 +61,17 @@ public class GameOutput {
 
     public static void displayRoom() {
 
-        System.out.println(Game.currentRoom);
-
         for (Room room : GenerateMap.roomList) {
             if (Game.currentRoom.equals(room.name)) {
                 System.out.println();
                 System.out.println(room.name);
                 System.out.println(room.description);
-                System.out.println("Possible Movements: " + room.neighbours);
+
+                System.out.print("north = " + room.neighbours.get("north") + " | ");
+                System.out.print("east = " + room.neighbours.get("east") + " | ");
+                System.out.print("south = " + room.neighbours.get("south") + " | ");
+                System.out.println("west = " + room.neighbours.get("west") + " ");
+
                 System.out.println();
                 return;
             }

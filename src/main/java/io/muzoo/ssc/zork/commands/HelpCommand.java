@@ -14,16 +14,18 @@ public class HelpCommand extends Command {
 
     @Override
     public String description() {
-        return "List of all available commands";
+        return "[ help ] List of all available commands";
     }
 
     @Override
     public void execute(Game game, String[] array) {
-
+        System.out.println();
+        System.out.println("A list of all available commands and instructions on how to use them.");
+        System.out.println();
         for (String command : CommandFactory.getCOMMANDS().keySet()) {
-            game.output.println(command + " - " + CommandFactory.getCOMMANDS().get(command).description());
+            game.output.println(command + "   -   " + CommandFactory.getCOMMANDS().get(command).description());
         }
-
+        System.out.println();
     }
 
     @Override

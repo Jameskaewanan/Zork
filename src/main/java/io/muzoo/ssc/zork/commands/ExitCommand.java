@@ -14,12 +14,13 @@ public class ExitCommand extends Command {
 
     @Override
     public String description() {
-        return "Exit the game";
+        return "[ exit ] Exit the game";
     }
 
     @Override
     public void execute(Game game, String[] array) {
-        game.output.println("Exiting game");
+        System.out.println();
+        game.output.println("Exiting game...");
         game.exit();
     }
 
