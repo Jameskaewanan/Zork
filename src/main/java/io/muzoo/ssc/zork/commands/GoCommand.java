@@ -9,7 +9,7 @@ import io.muzoo.ssc.zork.mapProcessor.Room;
 import java.util.Arrays;
 
 
-public class GoCommand extends Command {
+public class GoCommand extends Command { // Command to traverse the game map
 
     private Game game;
 
@@ -23,7 +23,7 @@ public class GoCommand extends Command {
     @Override
     public void execute(Game game, String[] array) {
 
-        if (array.length <= 1) {
+        if (array.length <= 1) { // Error checking if no argument was given to where the player should move
             System.out.println();
             System.out.println("Please input a valid direction. Available directions: North, East, South, West");
             System.out.println();
@@ -36,31 +36,26 @@ public class GoCommand extends Command {
         String[] directionList = {"north","east","south","west"};
 
         for (Room room : GenerateMap.roomList) {
-            if (!Arrays.asList(directionList).contains(direction)) {
+            if (!Arrays.asList(directionList).contains(direction)) { // Error checking if argument given is not a valid direction
                 System.out.println();
                 System.out.println("Please input a valid direction. Available directions: North, East, South, West");
                 System.out.println();
                 return;
             }
-            if (room.name.equals(currentRoom)) {
+            if (room.name.equals(currentRoom)) { // If chosen direction does not lead to anywhere error will pop up
                 compare = room.neighbours.get(direction);
                 if (compare.equals("%")) {
                     System.out.println();
                     System.out.println("Cannot go to this room as it does not exist");
                     System.out.println();
                 }
-                else {
+                else { // Change currentRoom to new room to indicate a movement from one room the the next
                     Game.currentRoom = room.neighbours.get(direction);
-                    GameOutput.displayRoom();
+                    GameOutput.displayRoom(); // Display details of the next room (now currentRoom)
                     return;
                 }
 
             }
         }
-    }
-
-    @Override
-    public String getCommand() {
-        return "go";
     }
 }

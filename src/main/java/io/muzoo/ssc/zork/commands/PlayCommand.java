@@ -6,7 +6,7 @@ import io.muzoo.ssc.zork.mapProcessor.GenerateMap;
 
 import java.io.FileNotFoundException;
 
-public class PlayCommand extends Command {
+public class PlayCommand extends Command { // Command to indicate that a game session has started
 
     private Game game;
     public static String[] array;
@@ -26,23 +26,18 @@ public class PlayCommand extends Command {
 
         this.array = array;
 
-        if (array.length <= 1) {
+        if (array.length <= 1) { // Check if argument for a chosen map exists
             System.out.println();
             System.out.println("Please input a map. Available maps: Spaceship");
             System.out.println();
             return;
         }
 
-        try {
+        try { // If chosen map is available generate the map
             generateMap.map(array);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
 
-    }
-
-    @Override
-    public String getCommand() {
-        return "play";
     }
 }

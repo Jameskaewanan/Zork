@@ -4,7 +4,7 @@ import io.muzoo.ssc.zork.Game;
 import io.muzoo.ssc.zork.commandProcessor.Command;
 import io.muzoo.ssc.zork.commandProcessor.CommandFactory;
 
-public class HelpCommand extends Command {
+public class HelpCommand extends Command { // Command to display all available commands and usage
 
     private Game game;
 
@@ -26,10 +26,5 @@ public class HelpCommand extends Command {
             game.output.println(command + "   -   " + CommandFactory.getCOMMANDS().get(command).description());
         }
         System.out.println();
-    }
-
-    @Override
-    public String getCommand() {
-        return "help";
     }
 }

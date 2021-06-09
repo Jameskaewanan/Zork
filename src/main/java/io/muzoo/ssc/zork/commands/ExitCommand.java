@@ -4,7 +4,7 @@ import io.muzoo.ssc.zork.Game;
 import io.muzoo.ssc.zork.commandProcessor.Command;
 
 
-public class ExitCommand extends Command {
+public class ExitCommand extends Command { // Command to exit the program
 
     private Game game;
 
@@ -23,11 +23,5 @@ public class ExitCommand extends Command {
         game.output.println("Exiting game...");
         game.exit();
     }
-
-    @Override
-    public String getCommand() {
-        return "exit";
-    }
-
 
 }
