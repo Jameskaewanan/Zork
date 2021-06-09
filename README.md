@@ -18,3 +18,6 @@ An individual project, developing a text based game, Zork in Java. For my Univer
     * Map can be fully traversed
         * "go [ north / east / south / west ]"
         * Includes appropriate displays such as: name, desc, connecting rooms
+
+* __Version 0.2.1 - Map (minor visual improvements and command checks)__
+    * minor visual improvements and command checks
