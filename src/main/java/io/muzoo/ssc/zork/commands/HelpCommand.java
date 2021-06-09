@@ -13,11 +13,6 @@ public class HelpCommand extends Command {
     }
 
     @Override
-    public int numArgs() {
-        return 0;
-    }
-
-    @Override
     public String description() {
         return "List of all available commands";
     }

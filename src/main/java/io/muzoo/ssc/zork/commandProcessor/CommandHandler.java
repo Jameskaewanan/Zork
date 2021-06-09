@@ -10,6 +10,4 @@ public class CommandHandler {
         return strings;
     }
 
-
-
 }

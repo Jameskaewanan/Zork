@@ -1,8 +1,7 @@
 package io.muzoo.ssc.zork.commandProcessor;
 
 import io.muzoo.ssc.zork.Game;
-import io.muzoo.ssc.zork.commands.ExitCommand;
-import io.muzoo.ssc.zork.commands.HelpCommand;
+import io.muzoo.ssc.zork.commands.*;
 
 
 import java.util.HashMap;
@@ -16,6 +15,9 @@ public class CommandFactory {
 
         COMMANDS.put("exit", new ExitCommand(game));
         COMMANDS.put("help", new HelpCommand(game));
+        COMMANDS.put("play", new PlayCommand(game));
+        COMMANDS.put("quit", new QuitCommand(game));
+        COMMANDS.put("go", new GoCommand(game));
 
     }
 

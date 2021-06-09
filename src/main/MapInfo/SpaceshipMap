@@ -1,0 +1,64 @@
+Crew Cabin
+You find yourself alone in the crew cabins. The whole room is lit by the flashing red lights of the emergency alarm system.
+ITEM,MONSTER
+Engine Room,%,%,Mess Hall
+Mess Hall
+You find half eaten food laying on the tables. splotches of blood and bullet holes littered the room.
+ITEM,MONSTER
+Medical Bay,Crew Cabin,%,Storage Compartment
+Storage Compartment
+None of the supplies were looted, Whatever is going on, it doesn't seem like the fault of any pirates.
+ITEM, MONSTER
+%,Mess Hall,%,%
+Engine Room
+The engine is still running, power to the ship hasn't been cut off. The blaring sound of the alarm is starting to get to me...
+ITEM,MONSTER
+Cargo Bay,%,Crew Cabin,%
+Cargo Bay
+Crates and storage containers are stacked upon each other like a defensive emplacement. Something must've come in via the Hanger.
+ITEM,MONSTER
+Hanger Bay,%,Engine Room,Infirmary
+Infirmary
+Bodies lay lifeless amongst the clinical beds. The bodies have strange claw marks on them as well as signs of a parasitic infection.
+ITEM,MONSTER
+Life Support Systems,Cargo Bay,Mess Hall,Laboratory
+Laboratory
+All important scientific documents are gone, seems like everyone was trying to evacuate in a hurry.
+ITEM,MONSTER
+%,Infirmary,%,%
+Life Support Systems
+The life support systems seem to be cut off, dead bodies littered the floor, for a room labelled as "life support" you expect there to be life no?
+ITEM,MONSTER
+%,Turret Access,Infirmary,%
+Turret Access
+All ammunition to the turret has been spent, seems like we were trying to ward off an attacker. I should look through the containers for any weapons.
+ITEM,MONSTER
+Navigation Terminal,%,%,Life Support
+Hanger Bay
+A small unidentified ship is parked here, looked as if it came crashing in. The crew in the cockpit window seemed almost... Un-human...
+ITEM,MONSTER
+Cryogenic Storage,Escape Pods,Cargo Bay,%
+Escape Pods
+Some escape pods seemed to make it out, some are still connected to their docking ports, inside are the bodies of those who seem to have not escaped in time...
+ITEM,MONSTER
+%,%,%,Hanger Bay
+Navigation Terminal
+The ship is set on course for the nearest medical station. Even then, the nearest one is approximately 3 light years away...
+ITEM,MONSTER
+Bridge,Cryogenic Storage,Turret Access,%
+Cryogenic Storage
+Some living beings are stored in here, but the container had been breached and the contents inside are all dead. Most of them seemed to have been infected by some parasitic life-form.
+ITEM,MONSTER
+Bridge,%,Hanger Bay,Navigation Terminal
+Captain's Quarters
+The Captain laid dead in his room, looks like he was trying to take his own life...
+ITEM,MONSTER
+%,Bridge,%,%
+Bridge
+There was conflict here, dead crew, bullet holes, blood and organs splattered across the ship's control terminals.
+ITEM,MONSTER
+Communication Terminal,Cryogenic Bay,Navigation Terminal,Captain's Quarters
+Communication Terminal
+A distress signal has been sent out, communication logs shows that multiple attempts have been made to contact nearby stations and ships.
+ITEM,MONSTER
+%,%,Bridge,%

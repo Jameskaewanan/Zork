@@ -4,9 +4,7 @@ import io.muzoo.ssc.zork.commandProcessor.Command;
 import io.muzoo.ssc.zork.commandProcessor.CommandFactory;
 import io.muzoo.ssc.zork.commandProcessor.CommandHandler;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
-import java.util.List;
 import java.util.Scanner;
 
 public class Game {
@@ -15,31 +13,68 @@ public class Game {
     private CommandHandler handler = new CommandHandler();
     private CommandFactory factory = new CommandFactory();
 
-    public void game_loop() {
+    private String[] menuCommands = {"help", "play", "load", "exit"};
+    private String[] gameCommands = {"info", "take", "drop", "attack", "go", "map", "autopilot", "quit", "save"};
+
+    public static int isGameRunning = 0;
+    public static int quitGame = 0;
+
+    public static String currentRoom;
+
+    public void main_loop() {
+
+
 
         factory.RegisteredCommands(this);
 
         output.welcomeScreen();
 
         while (true) {
+
+            if (isGameRunning == 1)
+                game_loop();
+
             Scanner scanner = new Scanner(System.in);
             System.out.print(">> ");
             String playerInput = scanner.nextLine();
             String[] words = handler.parse(playerInput);
-            //output.println(playerInput);
-            Command command = factory.lookupExecute(words);
 
-            command.execute(this, words);
-            // testing stuff below
+            if (Arrays.asList(menuCommands).contains(words[0])) {
+                Command command = factory.lookupExecute(words);
+                command.execute(this, words);
+            } else {
+                System.out.println("Invalid Command");
+            }
+        }
+    }
 
-         /*
-            if (words[1].equals("hello"))
-                System.out.println("1");
-            else
-                System.out.println("0");
-        */
+    public void game_loop() {
+
+        System.out.println("Now in game_loop");
+
+        factory.RegisteredCommands(this);
+
+        output.mapIntro();
+
+        while (true) {
+
+            if (quitGame == 1)
+                return;
+
+            Scanner scanner = new Scanner(System.in);
+            System.out.print(">> ");
+            String playerInput = scanner.nextLine();
+            String[] words = handler.parse(playerInput);
+
+            if (Arrays.asList(gameCommands).contains(words[0])) {
+                Command command = factory.lookupExecute(words);
+                command.execute(this, words);
+            } else {
+                System.out.println("Invalid Command");
+            }
 
         }
+
     }
 
     public void exit() {
