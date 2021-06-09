@@ -16,4 +16,5 @@ An individual project, developing a text based game, Zork in Java. For my Univer
     * Added the first map, SpaceshipMap
         * Individual rooms implemented (although no items and/or monsters yet)
     * Map can be fully traversed
+        * "go [ north / east / south / west ]"
         * Includes appropriate displays such as: name, desc, connecting rooms
