@@ -1,6 +1,7 @@
 package io.muzoo.ssc.zork.mapProcessor;
 
 import io.muzoo.ssc.zork.entityProcesser.GenerateMonster;
+import io.muzoo.ssc.zork.itemProcessor.GenerateItem;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -9,10 +10,12 @@ import java.util.Scanner;
 
 public class GenerateRooms extends Room { // Generate Room Objects for the map
 
-    private static String monster = "";
+    public String monsterLine = "";
+    public String itemLine = "";
 
-    public static ArrayList<Room> createRooms(String filename) throws FileNotFoundException {
+    public ArrayList<Room> createRooms(String filename) throws FileNotFoundException {
         ArrayList<Room> rooms = new ArrayList<Room>();
+
 
         // Search for map file containing data about the map and its rooms
         String filePath = "C:\\Users\\USER\\Desktop\\Zork\\src\\main\\MapInfo\\" + filename;
@@ -24,13 +27,22 @@ public class GenerateRooms extends Room { // Generate Room Objects for the map
             room.name = scanner.nextLine();
             room.description = scanner.nextLine();
 
-            //skip items and monsters for now
             String[] entityItemLine = scanner.nextLine().split(",");
-            monster = entityItemLine[1];
-            if (monster.equals("MONSTER"))
+            monsterLine = entityItemLine[1];
+
+            if (monsterLine.equals("MONSTER")) {
                 room.monster = null;
+            }
+            else{
+                room.monster = GenerateMonster.createMonster(monsterLine);
+            }
+
+
+            itemLine = entityItemLine[0];
+            if (itemLine.equals("ITEM"))
+                room.item = null;
             else
-                room.monster = GenerateMonster.createMonster();
+                room.item = GenerateItem.createItem(itemLine);
 
             String[] neighbourLine = scanner.nextLine().split(",");
 
@@ -47,9 +59,4 @@ public class GenerateRooms extends Room { // Generate Room Objects for the map
 
         return rooms;
     }
-
-    public String getMonster() {
-        return this.monster;
-    }
-
 }

@@ -20,7 +20,7 @@ public class ExitCommand extends Command { // Command to exit the program
     @Override
     public void execute(Game game, String[] array) {
         System.out.println();
-        game.output.println("Exiting game...");
+        System.out.println("Exiting game...");
         game.exit();
     }
 

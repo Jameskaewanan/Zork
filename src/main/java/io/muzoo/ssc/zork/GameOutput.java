@@ -1,17 +1,11 @@
 package io.muzoo.ssc.zork;
 
+import io.muzoo.ssc.zork.itemProcessor.GenerateItem;
 import io.muzoo.ssc.zork.mapProcessor.GenerateMap;
 import io.muzoo.ssc.zork.mapProcessor.GenerateRooms;
 import io.muzoo.ssc.zork.mapProcessor.Room;
 
 public class GameOutput { // Controls the majority of outputs to the terminal
-
-    public void println(String msg) {
-        System.out.println(msg);
-    }
-    public void print(String msg) {
-        System.out.print(msg);
-    }
 
     public void welcomeScreen() { // Welcome screen, interface for main_loop
 
@@ -60,7 +54,12 @@ public class GameOutput { // Controls the majority of outputs to the terminal
         if (GenerateMap.roomList.get(0).monster == null)
             System.out.println("No monsters in this room");
         else
-            System.out.println(GenerateMap.roomList.get(0).monster.name);
+            System.out.println("Monster in the room: " + GenerateMap.roomList.get(0).monster.name);
+
+        if (GenerateMap.roomList.get(0).item == null)
+            System.out.println("No items in this room");
+        else
+            System.out.println("Item in the room: " + GenerateMap.roomList.get(0).item.name);
 
         System.out.print("Available movements: ");
         System.out.print("north = " + GenerateMap.roomList.get(0).neighbours.get("north") + " | ");
@@ -83,7 +82,12 @@ public class GameOutput { // Controls the majority of outputs to the terminal
                 if (room.monster == null)
                     System.out.println("No monsters in this room");
                 else
-                    System.out.println(room.monster.name);
+                    System.out.println("Monster in the room: " + room.monster.name);
+
+                if (room.item == null)
+                    System.out.println("No items in this room");
+                else
+                    System.out.println("Item in the room: " + room.item.name);
 
                 System.out.print("Available movements: ");
                 System.out.print("north = " + room.neighbours.get("north") + " | ");
@@ -98,5 +102,25 @@ public class GameOutput { // Controls the majority of outputs to the terminal
 
     }
 
+    public static void displayCombat() {
 
+        for (Room room : GenerateMap.roomList) {
+            if (Game.currentRoom.equals(room.name)) { // Finds the current room amongst list of rooms of the map to display correct monster
+
+                System.out.println("\n[" + room.monster.name + "]");
+                System.out.println(room.monster.description);
+
+                System.out.println("\n" + room.monster.name + " Health: " + room.monster.healthPoints);
+                System.out.println("\nYour health: " + Game.player.healthPoints);
+
+                System.out.println("\n============================================================================================");
+
+                System.out.println("\nSelect from the following options");
+                System.out.println("attack | use | help | info\n");
+
+
+            }
+        }
+
+    }
 }

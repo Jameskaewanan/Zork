@@ -1,6 +1,9 @@
 package io.muzoo.ssc.zork.entityProcesser;
 
+import io.muzoo.ssc.zork.itemProcessor.Item;
+
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Player extends Entity{
 
@@ -8,10 +11,9 @@ public class Player extends Entity{
         name = "Player";
         healthPoints = 100;
         maxHealthPoints = 200;
-        attackPoints = 10;
+        attackPoints = 0;
         defensePoints = 0;
+        inventory = new HashMap<String, Item>();
     }
-
-    //public static ArrayList<Items> inventory;
 
 }

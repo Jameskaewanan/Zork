@@ -52,6 +52,20 @@ public class GoCommand extends Command { // Command to traverse the game map
                 else { // Change currentRoom to new room to indicate a movement from one room the the next
                     Game.currentRoom = room.neighbours.get(direction);
                     GameOutput.displayRoom(); // Display details of the next room (now currentRoom)
+
+                    if (Game.player.healthPoints < Game.player.maxHealthPoints) {
+                        if (Game.player.healthPoints + 10 >= Game.player.maxHealthPoints) {
+                            Game.player.healthPoints = 200;
+                            System.out.println("\nYou are at max health\n");
+                            return;
+                        }
+                        Game.player.healthPoints = Game.player.healthPoints + 10;
+                        System.out.println("\nYou have regenerated 10 health points, you current health is: " + Game.player.healthPoints + "\n");
+                    } else {
+                        return;
+                    }
+
+
                     return;
                 }
 

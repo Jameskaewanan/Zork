@@ -13,12 +13,16 @@ public class CommandFactory { // Assembles commands, assign keywords to command 
 
     public static void RegisteredCommands(Game game) { // A HashMap list of available commands
 
+        COMMANDS.put("go", new GoCommand(game));
+        COMMANDS.put("use", new UseCommand(game));
         COMMANDS.put("exit", new ExitCommand(game));
         COMMANDS.put("help", new HelpCommand(game));
         COMMANDS.put("play", new PlayCommand(game));
         COMMANDS.put("quit", new QuitCommand(game));
-        COMMANDS.put("go", new GoCommand(game));
+        COMMANDS.put("take", new TakeCommand(game));
+        COMMANDS.put("drop", new DropCommand(game));
         COMMANDS.put("attack", new AttackCommand(game));
+
 
     }
 

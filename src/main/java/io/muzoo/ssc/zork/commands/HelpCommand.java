@@ -23,7 +23,7 @@ public class HelpCommand extends Command { // Command to display all available c
         System.out.println("A list of all available commands and instructions on how to use them.");
         System.out.println();
         for (String command : CommandFactory.getCOMMANDS().keySet()) {
-            game.output.println(command + "   -   " + CommandFactory.getCOMMANDS().get(command).description());
+            System.out.println(command + "   -   " + CommandFactory.getCOMMANDS().get(command).description());
         }
         System.out.println();
     }

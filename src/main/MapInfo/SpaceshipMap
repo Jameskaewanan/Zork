@@ -1,6 +1,6 @@
 Crew Cabin
 You find yourself alone in the crew cabins. The whole room is lit by the flashing red lights of the emergency alarm system.
-ITEM,Parasite
+Knife,Parasite
 Engine Room,%,%,Mess Hall
 Mess Hall
 You find half eaten food laying on the tables. splotches of blood and bullet holes littered the room.
@@ -8,7 +8,7 @@ ITEM,MONSTER
 Medical Bay,Crew Cabin,%,Storage Compartment
 Storage Compartment
 None of the supplies were looted, Whatever is going on, it doesn't seem like the fault of any pirates.
-ITEM, MONSTER
+MedKit,MONSTER
 %,Mess Hall,%,%
 Engine Room
 The engine is still running, power to the ship hasn't been cut off. The blaring sound of the alarm is starting to get to me...
@@ -16,7 +16,7 @@ ITEM,MONSTER
 Cargo Bay,%,Crew Cabin,%
 Cargo Bay
 Crates and storage containers are stacked upon each other like a defensive emplacement. Something must've come in via the Hanger.
-ITEM,MONSTER
+ITEM,Infected
 Hanger Bay,%,Engine Room,Infirmary
 Infirmary
 Bodies lay lifeless amongst the clinical beds. The bodies have strange claw marks on them as well as signs of a parasitic infection.

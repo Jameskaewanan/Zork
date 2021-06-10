@@ -4,7 +4,6 @@ import io.muzoo.ssc.zork.Game;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class GenerateMap { // Once "play" command has activated a game session, generate the map
 
