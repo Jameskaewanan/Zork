@@ -26,3 +26,13 @@ An individual project, developing a text based game, Zork in Java. For my Univer
     * Added Player and Monster Entities
     * Added basic (really basic) combat mechanics
     * Implemented additional commands ("attack")
+    
+* __Version 0.4.0 - Re-designed combat, Item support__
+    * Re-designed combat system
+        * Separate combat sequence, allowing for display of enemy information (name, desc, health)
+        * Ability to use items during combat, such as weapon (eg. attack with knife) and consumables (eg. use medkit)
+    * Added item support
+        * Added player inventory
+        * take and drop items ("take", "drop")
+        * added support for consumables via the use command (eg. use medkit)
+    * Various bug fixes and general polish
