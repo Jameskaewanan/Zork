@@ -19,8 +19,8 @@ public class Game { // Main class to handle game functions
     private CommandFactory factory = new CommandFactory();
 
     private String[] menuCommands = {"help", "play", "load", "exit"};
-    private String[] gameCommands = {"help", "info", "take", "drop", "attack", "go", "map", "autopilot", "quit", "save", "use"};
-    private String[] combatCommands = {"attack", "use", "help"};
+    private String[] gameCommands = {"help", "info", "take", "drop", "attack", "go", "map", "quit", "save", "use"};
+    private String[] combatCommands = {"attack", "use", "help", "info"};
 
     public static int isGameRunning = 0;
     public static int quitGame = 0;
@@ -106,14 +106,6 @@ public class Game { // Main class to handle game functions
                         System.out.println("\nPlease input attack command in the format of [ attack with <weapon> ]\n");
                     else {
                         combatLogic(words[0], words[2]);
-                    }
-                }
-
-                else if (words[0].equals("use")) { // Case of using items
-                    if (words.length < 2)
-                        System.out.println("\nPlease input use command in the format of [ use <item> ]\n");
-                    else {
-                        combatLogic(words[0], words[1]);
                     }
                 }
 

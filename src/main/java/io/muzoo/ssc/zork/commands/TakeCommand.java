@@ -30,7 +30,7 @@ public class TakeCommand extends Command {
         for (Room room : GenerateMap.roomList) {
             if (Game.currentRoom.equals(room.name)) {
                 if (room.item == null) {
-                    System.out.println("\nNo item in the room");
+                    System.out.println("\nNo item in the room\n");
                     return;
                 }
                 if (room.item != null && !item.equals(room.item.name.toLowerCase())) {

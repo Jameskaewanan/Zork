@@ -82,12 +82,12 @@ public class GameOutput { // Controls the majority of outputs to the terminal
                 if (room.monster == null)
                     System.out.println("No monsters in this room");
                 else
-                    System.out.println("Monster in the room: " + room.monster.name);
+                    System.out.println("Monster in the room: " + room.monster.name + " - " + room.monster.description);
 
                 if (room.item == null)
                     System.out.println("No items in this room");
                 else
-                    System.out.println("Item in the room: " + room.item.name);
+                    System.out.println("Item in the room: " + room.item.name + " - " + room.item.description);
 
                 System.out.print("Available movements: ");
                 System.out.print("north = " + room.neighbours.get("north") + " | ");

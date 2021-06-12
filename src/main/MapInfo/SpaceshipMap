@@ -5,7 +5,7 @@ Engine Room,%,%,Mess Hall
 Mess Hall
 You find half eaten food laying on the tables. splotches of blood and bullet holes littered the room.
 ITEM,MONSTER
-Medical Bay,Crew Cabin,%,Storage Compartment
+Infirmary,Crew Cabin,%,Storage Compartment
 Storage Compartment
 None of the supplies were looted, Whatever is going on, it doesn't seem like the fault of any pirates.
 MedKit,MONSTER
