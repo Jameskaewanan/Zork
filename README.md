@@ -36,3 +36,8 @@ An individual project, developing a text based game, Zork in Java. For my Univer
         * take and drop items ("take", "drop")
         * added support for consumables via the use command (eg. use medkit)
     * Various bug fixes and general polish
+    
+* __Version 0.4.1 - Added "info" command__
+    * Added support for "info" command
+        * Displays room, player, and monster/item stats
+    * Minor bug fixes
