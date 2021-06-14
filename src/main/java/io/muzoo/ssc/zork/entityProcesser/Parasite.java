@@ -8,7 +8,8 @@ public class Parasite extends Entity {
         healthPoints = 20;
         maxHealthPoints = 20;
         attackPoints = 5;
-        defensePoints = 0;
+        defensePoints = 0.1;
+        agilityPoints = 0.6;
         inventory = null;
     }
 

@@ -22,6 +22,8 @@ public class CommandFactory { // Assembles commands, assign keywords to command 
         COMMANDS.put("take", new TakeCommand(game));
         COMMANDS.put("drop", new DropCommand(game));
         COMMANDS.put("info", new InfoCommand(game));
+        COMMANDS.put("save", new SaveCommand(game));
+        COMMANDS.put("load", new LoadCommand(game));
         COMMANDS.put("attack", new AttackCommand(game));
 
 

@@ -59,8 +59,8 @@ public class GoCommand extends Command { // Command to traverse the game map
                             System.out.println("\nYou are at max health\n");
                             return;
                         }
-                        Game.player.healthPoints = Game.player.healthPoints + 10;
-                        System.out.println("\nYou have regenerated 10 health points, you current health is: " + Game.player.healthPoints + "\n");
+                        Game.player.healthPoints = Game.player.healthPoints + 5;
+                        System.out.println("You have regenerated 5 health points, you current health is: " + Game.player.healthPoints + "\n");
                     } else {
                         return;
                     }

@@ -12,7 +12,8 @@ public abstract class Entity { // Blueprint for Entities (Player and Monsters)
     public int healthPoints;
     public int maxHealthPoints;
     public int attackPoints;
-    public int defensePoints;
+    public double defensePoints; // Base defense, 0 meaning no defense - can be increased up to 1
+    public double agilityPoints; // Base agility, 0 meaning no agility - cab be increased up to 1
     public HashMap<String, Item> inventory;
 
 }

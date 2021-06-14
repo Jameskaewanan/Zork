@@ -1,8 +1,10 @@
 package io.muzoo.ssc.zork;
 
+import java.io.FileNotFoundException;
+
 public class Main {
 
-    public static void main(String[] args) { // Launch game
+    public static void main(String[] args) throws FileNotFoundException { // Launch game
         Game game = new Game();
         game.main_loop();
     }

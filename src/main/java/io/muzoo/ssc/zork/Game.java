@@ -9,7 +9,10 @@ import io.muzoo.ssc.zork.itemProcessor.Item;
 import io.muzoo.ssc.zork.mapProcessor.GenerateMap;
 import io.muzoo.ssc.zork.mapProcessor.Room;
 
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Game { // Main class to handle game functions
@@ -18,9 +21,10 @@ public class Game { // Main class to handle game functions
     private CommandHandler handler = new CommandHandler();
     private CommandFactory factory = new CommandFactory();
 
-    private String[] menuCommands = {"help", "play", "load", "exit"};
-    private String[] gameCommands = {"help", "info", "take", "drop", "attack", "go", "map", "quit", "save", "use"};
+    private String[] menuCommands = {"help", "play", "load", "exit", "load"};
+    private String[] gameCommands = {"help", "info", "take", "drop", "attack", "go", "map", "quit", "save", "use", "save"};
     private String[] combatCommands = {"attack", "use", "help", "info"};
+    public ArrayList<String> saveList = new ArrayList<String>();
 
     public static int isGameRunning = 0;
     public static int quitGame = 0;
@@ -30,7 +34,7 @@ public class Game { // Main class to handle game functions
 
     public static String currentRoom;
 
-    public void main_loop() { // Main loop managing menu screen
+    public void main_loop() throws FileNotFoundException { // Main loop managing menu screen
 
         factory.RegisteredCommands(this);
 
@@ -46,6 +50,7 @@ public class Game { // Main class to handle game functions
             Scanner scanner = new Scanner(System.in);
             System.out.print(">> ");
             String playerInput = scanner.nextLine().toLowerCase();
+            saveList.add(playerInput);
             String[] words = handler.parse(playerInput);
 
             if (Arrays.asList(menuCommands).contains(words[0])) { // Parse command and check if valid command
@@ -57,7 +62,7 @@ public class Game { // Main class to handle game functions
         }
     }
 
-    public void game_loop() { // Loop that runs the game session
+    public void game_loop() throws FileNotFoundException { // Loop that runs the game session
 
         factory.RegisteredCommands(this);
 
@@ -75,6 +80,7 @@ public class Game { // Main class to handle game functions
             Scanner scanner = new Scanner(System.in);
             System.out.print(">> ");
             String playerInput = scanner.nextLine().toLowerCase();
+            saveList.add(playerInput);
             String[] words = handler.parse(playerInput);
 
             if (Arrays.asList(gameCommands).contains(words[0])) { // Parse command and check if valid command
@@ -87,7 +93,7 @@ public class Game { // Main class to handle game functions
 
     }
 
-    public void combat_loop() { // Loop that handles combat
+    public void combat_loop() throws FileNotFoundException { // Loop that handles combat
 
         while (isCombat == 1) {
 
@@ -96,6 +102,7 @@ public class Game { // Main class to handle game functions
             Scanner scanner = new Scanner(System.in);
             System.out.print(">> ");
             String playerInput = scanner.nextLine().toLowerCase();
+            saveList.add(playerInput);
             String[] words = handler.parse(playerInput);
 
             if (Arrays.asList(combatCommands).contains(words[0])) { // Parse command and check if valid command
@@ -105,7 +112,7 @@ public class Game { // Main class to handle game functions
                     if (words.length < 3)
                         System.out.println("\nPlease input attack command in the format of [ attack with <weapon> ]\n");
                     else {
-                        combatLogic(words[0], words[2]);
+                        combatLogic(words[2]);
                     }
                 }
 
@@ -119,12 +126,13 @@ public class Game { // Main class to handle game functions
         }
     }
 
-    public void combatLogic(String command, String item) {
+    public void combatLogic(String item) {
 
         Item weapon = new FistWeapon();
         String currentRoom = Game.currentRoom;
 
         // Check if weapon exists in inventory
+
         if (item.equals("fist") || item.equals("fists")){
             System.out.println("\nEquipped fists");
         }
@@ -133,29 +141,66 @@ public class Game { // Main class to handle game functions
         }
         else if (player.inventory.containsKey(item) && player.inventory.get(item).itemType == 0) {
             weapon = player.inventory.get(item);
-            System.out.println("\nEquipped " + weapon.name);
         }
         else if (player.inventory.containsKey(item) && player.inventory.get(item).itemType == 1) {
-            System.out.println(player.inventory.get(item).name + " is not a weapon\n");
-            System.out.println("\nWill default to using fists");
+            System.out.println(player.inventory.get(item).name + " is not a weapon, will default to using fists");
         }
         else if (!player.inventory.containsKey(item)) {
-            System.out.println("\nWeapon does not exist in inventory");
-            System.out.println("\nWill default to using fists");
+            System.out.println("\nWeapon does not exist in inventory, will default to using fists");
         }
-
-        int playerDamage = Game.player.attackPoints + weapon.debuffs;
 
         for (Room room : GenerateMap.roomList) {
             if (currentRoom.equals(room.name)) {
                 if (room.monster != null){
 
-                    System.out.println("\n" + "Attacking " + room.monster.name + " with " + weapon.name);
+                    // ######### Damage Logic #########
 
-                    room.monster.healthPoints = room.monster.healthPoints - (playerDamage);
-                    System.out.println("\n" + "Dealt " + playerDamage + " Damage to " + room.monster.name);
+                    Random rand = new Random();
 
-                    Game.player.healthPoints = Game.player.healthPoints - room.monster.attackPoints;
+                    // PLAYER DAMAGE AND HIT CHANCE LOGIC
+
+                    int maxPlayerAttack = (int) (weapon.debuffs - (weapon.debuffs * room.monster.defensePoints));
+                    int minPlayerAttack = (int) (0.7 * maxPlayerAttack);
+                    int playerAttack = (int) (minPlayerAttack + (maxPlayerAttack - minPlayerAttack) * rand.nextDouble());
+
+                    double playerHitChance = (1-room.monster.agilityPoints);
+                    if (playerHitChance < 0.4) { // 0.4 base hit chance, Always have at least a 40% chance to hit
+                        playerHitChance = playerHitChance + 0.4;
+                    }
+
+                    int random100 = rand.nextInt(100 - 0 + 1) + 0;
+                    if (random100 >= playerHitChance*100) {
+                        System.out.println("\nYou missed");
+                    }
+                    else {
+                        System.out.println("\n" + "Attacking " + room.monster.name + " with " + weapon.name);
+                        room.monster.healthPoints = room.monster.healthPoints - (playerAttack);
+                        System.out.println("\n" + "You Dealt " + playerAttack + " Damage to " + room.monster.name);
+                    }
+
+                    // MONSTER DAMAGE AND HIT CHANCE LOGIC
+
+                    int maxMonsterAttack = (int) (room.monster.attackPoints - (room.monster.attackPoints * player.defensePoints));
+                    int minMonsterAttack = (int) (0.7 * maxMonsterAttack);
+                    int monsterAttack = (int) (minMonsterAttack + (maxMonsterAttack - minMonsterAttack) * rand.nextDouble());
+
+                    double monsterHitChance = (1-player.agilityPoints);
+                    if (monsterHitChance < 0.4) { // 0.4 base hit chance, Always have at least a 40% chance to hit
+                        monsterHitChance = monsterHitChance + 0.4;
+                    }
+
+                    random100 = rand.nextInt(100 - 0 + 1) + 0;
+
+                    if (random100 >= monsterHitChance*100) {
+                        System.out.println("\n" + room.monster.name + " missed");
+                    }
+                    else {
+                        System.out.println("\n" + room.monster.name + " attacked you");
+                        player.healthPoints = player.healthPoints - (monsterAttack);
+                        System.out.println("\n" + room.monster.name + " Dealt " + monsterAttack + " Damage to you");
+                    }
+
+                    // ######### End of Damage Logic #########
 
                     if (room.monster.healthPoints <= 0) {
                         System.out.println("\n" + room.monster.name + " Defeated");

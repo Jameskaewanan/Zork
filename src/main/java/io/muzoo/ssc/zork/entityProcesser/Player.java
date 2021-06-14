@@ -12,7 +12,8 @@ public class Player extends Entity{
         healthPoints = 100;
         maxHealthPoints = 200;
         attackPoints = 0;
-        defensePoints = 0;
+        defensePoints = 0.1;
+        agilityPoints = 0;
         inventory = new HashMap<String, Item>();
     }
 

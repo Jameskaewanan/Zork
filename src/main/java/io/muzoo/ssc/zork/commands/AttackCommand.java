@@ -2,11 +2,8 @@ package io.muzoo.ssc.zork.commands;
 
 import io.muzoo.ssc.zork.Game;
 import io.muzoo.ssc.zork.commandProcessor.Command;
-import io.muzoo.ssc.zork.entityProcesser.Player;
 import io.muzoo.ssc.zork.mapProcessor.GenerateMap;
 import io.muzoo.ssc.zork.mapProcessor.Room;
-
-import java.util.SortedMap;
 
 public class AttackCommand extends Command {
 
@@ -38,6 +35,6 @@ public class AttackCommand extends Command {
 
         Game.isCombat = 1; // Activate combat sequence
         System.out.println("\nInitiating combat sequence...");
-        game.combatLogic(array[0], array[2]);
+        game.combatLogic(array[2]);
     }
 }
