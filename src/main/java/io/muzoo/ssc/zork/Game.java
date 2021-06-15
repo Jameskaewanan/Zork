@@ -29,6 +29,7 @@ public class Game { // Main class to handle game functions
     public static int isGameRunning = 0;
     public static int quitGame = 0;
     public static int isCombat = 0;
+    public static int win = 0;
 
     public static Player player = new Player();
 
@@ -76,6 +77,11 @@ public class Game { // Main class to handle game functions
 
             if (isGameRunning == 0) // Addresses a bug where once player dies, game does not quit session properly
                 break;
+
+            if (win == 1) {
+                output.displayEnding();
+                return;
+            }
 
             Scanner scanner = new Scanner(System.in);
             System.out.print(">> ");
@@ -201,6 +207,16 @@ public class Game { // Main class to handle game functions
                     }
 
                     // ######### End of Damage Logic #########
+
+                    if (room.monster.healthPoints <= 0 && room.monster.isBoss == 1) {
+                        System.out.println("\n" + room.monster.name + " Defeated");
+                        System.out.println("\nExiting combat sequence\n");
+                        room.monster = null;
+                        isCombat = 0;
+                        isGameRunning = 0;
+                        win = 1;
+                        return;
+                    }
 
                     if (room.monster.healthPoints <= 0) {
                         System.out.println("\n" + room.monster.name + " Defeated");

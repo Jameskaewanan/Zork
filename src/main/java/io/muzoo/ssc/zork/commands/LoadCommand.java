@@ -29,7 +29,8 @@ public class LoadCommand extends Command {
         [ Disclaimer ]
 
         The "load" command doesn't work yet
-        You can save yes, but the save file will be useless as it does not load
+        You can save yes, but the save file will be useless
+        Something's wrong with the call to command.execute(), idk tbh
         I'll try to fix it in the future, probably an easy fix, but I'm too lazy rn
 
          */

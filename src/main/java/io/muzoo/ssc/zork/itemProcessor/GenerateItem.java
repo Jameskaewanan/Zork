@@ -1,7 +1,5 @@
 package io.muzoo.ssc.zork.itemProcessor;
 
-import io.muzoo.ssc.zork.entityProcesser.Entity;
-import io.muzoo.ssc.zork.entityProcesser.Parasite;
 import io.muzoo.ssc.zork.mapProcessor.GenerateRooms;
 
 public class GenerateItem {
@@ -14,9 +12,21 @@ public class GenerateItem {
             Item knife = new KnifeWeapon();
             return knife;
         }
-        if (item.equals("MedKit")) {
-            Item medkit = new MedKitConsumable();
+        if (item.equals("Lasrifle")) {
+            Item lasrifle = new LasrifleWeapon();
+            return lasrifle;
+        }
+        if (item.equals("Chainsword")) {
+            Item chainsword = new ChainSwordWeapon();
+            return chainsword;
+        }
+        if (item.equals("Medipack")) {
+            Item medkit = new MedipackConsumable();
             return medkit;
+        }
+        if (item.equals("Armour")) {
+            Item armour = new ArmourConsumable();
+            return armour;
         }
         return null;
     }

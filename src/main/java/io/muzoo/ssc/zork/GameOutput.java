@@ -10,17 +10,17 @@ public class GameOutput { // Controls the majority of outputs to the terminal
     public void welcomeScreen() { // Welcome screen, interface for main_loop
 
         System.out.println();
-        System.out.println("############################");
-        System.out.println("#                          #");
-        System.out.println("#        Weclome To        #");
-        System.out.println("#           ZORK           #");
-        System.out.println("#                          #");
-        System.out.println("############################");
+        System.out.println("##########################################");
+        System.out.println("#                                        #");
+        System.out.println("#            Weclome To ZORK!            #");
+        System.out.println("#         Warhammer 40K Edition!         #");
+        System.out.println("#                                        #");
+        System.out.println("##########################################");
 
         System.out.println();
-        System.out.println("Welcome to a bare bones version of Zork!");
-        System.out.println("You will traverse dungeons and stuff");
-        System.out.println("You will kill things");
+        System.out.println("Welcome to ZORK: Warhammer 40K Edition!");
+        System.out.println("Based on the classic ZORK game with a twist of the 41st millennium ");
+        System.out.println("Venture through Warhammer 40K inspired maps and wield weapons and equipment from that universe");
         System.out.println();
         System.out.println("============================================================================================");
         System.out.println();
@@ -37,9 +37,16 @@ public class GameOutput { // Controls the majority of outputs to the terminal
             System.out.println("You are now playing the Spaceship map");
             System.out.println();
 
+            for (String line : GenerateRooms.intro) {
+                System.out.println(line);
+            }
+
+            System.out.println();
+
             displayStartingRoom();
 
-        }else {
+        }
+        else {
             return;
         }
     }
@@ -123,4 +130,13 @@ public class GameOutput { // Controls the majority of outputs to the terminal
         }
 
     }
+
+    public static void displayEnding() {
+
+        for (String line : GenerateRooms.ending) {
+            System.out.println(line);
+        }
+
+    }
+
 }

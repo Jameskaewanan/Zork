@@ -8,13 +8,17 @@ public class GenerateMonster {
 
     public static Entity createMonster(String monster) {
 
-        if (monster.equals("Parasite")) {
-            Entity parasite = new Parasite();
-            return parasite;
+        if (monster.equals("Gretchin")) {
+            Entity gretchin = new Gretchin();
+            return gretchin;
         }
-        if (monster.equals("Infected")) {
-            Entity infected = new Infected();
-            return infected;
+        if (monster.equals("Boyz")) {
+            Entity boyz = new Boyz();
+            return boyz;
+        }
+        if (monster.equals("Gorkanaut")) {
+            Entity gorkanaut = new Gorkanaut();
+            return gorkanaut;
         }
         else {
             return null;

@@ -14,6 +14,7 @@ public class Player extends Entity{
         attackPoints = 0;
         defensePoints = 0.1;
         agilityPoints = 0;
+        isBoss = 0;
         inventory = new HashMap<String, Item>();
     }
 

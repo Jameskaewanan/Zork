@@ -12,10 +12,11 @@ public class GenerateRooms extends Room { // Generate Room Objects for the map
 
     public String monsterLine = "";
     public String itemLine = "";
+    public static ArrayList<String> intro = new ArrayList<String>();
+    public static ArrayList<String> ending = new ArrayList<String>();
 
     public ArrayList<Room> createRooms(String filename) throws FileNotFoundException {
         ArrayList<Room> rooms = new ArrayList<Room>();
-
 
         // Search for map file containing data about the map and its rooms
         String filePath = "C:\\Users\\USER\\Desktop\\Zork\\src\\main\\MapInfo\\" + filename;
@@ -37,7 +38,6 @@ public class GenerateRooms extends Room { // Generate Room Objects for the map
                 room.monster = GenerateMonster.createMonster(monsterLine);
             }
 
-
             itemLine = entityItemLine[0];
             if (itemLine.equals("ITEM"))
                 room.item = null;
@@ -56,6 +56,30 @@ public class GenerateRooms extends Room { // Generate Room Objects for the map
 
         }
         scanner.close();
+
+        // Scanner to find intro and ending text for each map
+
+        String filePathText = "C:\\Users\\USER\\Desktop\\Zork\\src\\main\\MapInfo\\" + filename + "Text";
+        File fileText = new File(filePathText);
+        Scanner scannerText = new Scanner(fileText);
+
+        while(scannerText.hasNextLine()) {
+
+            String line = scannerText.nextLine();
+
+            if (line.equals("%")) {
+                while (scannerText.hasNextLine()) {
+                    line = scannerText.nextLine();
+                    ending.add(line);
+                }
+                break;
+            }
+
+            intro.add(line);
+
+        }
+
+        scannerText.close();
 
         return rooms;
     }

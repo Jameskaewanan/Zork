@@ -1,64 +1,64 @@
 Crew Cabin
-You find yourself alone in the crew cabins. The whole room is lit by the flashing red lights of the emergency alarm system.
-Knife,Parasite
+You find yourself in the crew cabins along with your fellow guardsmen. The whole room is lit by the flashing red lights of the emergency alarm system.
+Knife,MONSTER
 Engine Room,%,%,Mess Hall
 Mess Hall
-You find half eaten food laying on the tables. splotches of blood and bullet holes littered the room.
-ITEM,MONSTER
+Scenes of violence and chaos fill the room. Gretchins swarm the hall while your fellow guardsmen are helplessly fending them off.
+ITEM,Gretchin
 Infirmary,Crew Cabin,%,Storage Compartment
 Storage Compartment
-None of the supplies were looted, Whatever is going on, it doesn't seem like the fault of any pirates.
-MedKit,MONSTER
+None of the supplies were looted, You should take whatever you can and quickly pursue the Gorkanaut.
+Armour,MONSTER
 %,Mess Hall,%,%
 Engine Room
-The engine is still running, power to the ship hasn't been cut off. The blaring sound of the alarm is starting to get to me...
-ITEM,MONSTER
+The engine is still running, power to the ship hasn't been cut off yet. The blaring sound of the alarm is still heard.
+ITEM,Gretchin
 Cargo Bay,%,Crew Cabin,%
 Cargo Bay
-Crates and storage containers are stacked upon each other like a defensive emplacement. Something must've come in via the Hanger.
-ITEM,Infected
+Crates and storage containers are stacked upon each other like a defensive emplacement. many of your fellow guardsmen lay clutching their wounds.
+ITEM,Boyz
 Hanger Bay,%,Engine Room,Infirmary
 Infirmary
-Bodies lay lifeless amongst the clinical beds. The bodies have strange claw marks on them as well as signs of a parasitic infection.
-ITEM,MONSTER
+Bodies lay lifeless amongst the clinical beds. The infirmary is not capable to handle the amount of injured coming in.
+Medipack,MONSTER
 Life Support Systems,Cargo Bay,Mess Hall,Laboratory
 Laboratory
-All important scientific documents are gone, seems like everyone was trying to evacuate in a hurry.
+All important scientific documents are still present, of course the Orks do not care for this, all they know is bloodshed.
 ITEM,MONSTER
 %,Infirmary,%,%
 Life Support Systems
 The life support systems seem to be cut off, dead bodies littered the floor, for a room labelled as "life support" you expect there to be life no?
-ITEM,MONSTER
+Medipack,Boyz
 %,Turret Access,Infirmary,%
 Turret Access
-All ammunition to the turret has been spent, seems like we were trying to ward off an attacker. I should look through the containers for any weapons.
-ITEM,MONSTER
-Navigation Terminal,%,%,Life Support
+All ammunition to the turret has been spent, Seems like our firepower was not enough to ward off the Orks. I should look through the containers for any weapons.
+Lasrifle,MONSTER
+Navigation Terminal,%,%,Life Support Systems
 Hanger Bay
-A small unidentified ship is parked here, looked as if it came crashing in. The crew in the cockpit window seemed almost... Un-human...
-ITEM,MONSTER
+Muliple Ork raiding ship had boarded, looked as if it came crashing in. This was a swiftly coordinated attack.
+ITEM,Gretchin
 Cryogenic Storage,Escape Pods,Cargo Bay,%
 Escape Pods
 Some escape pods seemed to make it out, some are still connected to their docking ports, inside are the bodies of those who seem to have not escaped in time...
-ITEM,MONSTER
+Armour,Gretchin
 %,%,%,Hanger Bay
 Navigation Terminal
 The ship is set on course for the nearest medical station. Even then, the nearest one is approximately 3 light years away...
-ITEM,MONSTER
+ITEM,Boyz
 Bridge,Cryogenic Storage,Turret Access,%
 Cryogenic Storage
-Some living beings are stored in here, but the container had been breached and the contents inside are all dead. Most of them seemed to have been infected by some parasitic life-form.
-ITEM,MONSTER
+Some living beings are stored in here, but the container had been breached and the contents inside are all dead. These Orks know no boundaries, they slaughter everything.
+Medipack,MONSTER
 Bridge,%,Hanger Bay,Navigation Terminal
 Captain's Quarters
-The Captain laid dead in his room, looks like he was trying to take his own life...
-ITEM,MONSTER
+The Captain laid dead in his room. Brutally slaughtered, the Gorkanaut must me nearby
+Chainsword,Boyz
 %,Bridge,%,%
 Bridge
-There was conflict here, dead crew, bullet holes, blood and organs splattered across the ship's control terminals.
+There was conflict here, dead crew, bullet holes, blood and organs splattered across the ship's control terminals. The Orks have already gained access to the ship's controls.
 ITEM,MONSTER
 Communication Terminal,Cryogenic Bay,Navigation Terminal,Captain's Quarters
 Communication Terminal
-A distress signal has been sent out, communication logs shows that multiple attempts have been made to contact nearby stations and ships.
-ITEM,MONSTER
+A distress signal has been sent out, communication logs shows that multiple attempts have been made to contact nearby stations and vessels.
+ITEM,Gorkanaut
 %,%,Bridge,%

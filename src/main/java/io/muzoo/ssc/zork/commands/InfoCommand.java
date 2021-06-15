@@ -23,7 +23,7 @@ public class InfoCommand extends Command {
 
         System.out.println("[ Player Stats ]"); // Display Player Stats
         System.out.println("Health: " + game.player.healthPoints);
-        System.out.println("Defense: " + game.player.defensePoints);
+        System.out.println("Defense: " + (Math.round(game.player.defensePoints*100.0)/100.0));
 
         System.out.println("\n[ Inventory ]");
         for (String key: game.player.inventory.keySet()) {
