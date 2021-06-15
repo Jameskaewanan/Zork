@@ -47,3 +47,6 @@ An individual project, developing a text based game, Zork in Java. For my Univer
     * Overhaul the combat logic
         * Variable attack damage based on weapon, defense, agility
         * Added Hit Chance based on agility
+        
+* __Version 1.0.0 - Release, Fully Implemented__
+    * The final version which reaches all project requirements
