@@ -39,7 +39,7 @@ public class LoadCommand extends Command {
         CommandFactory factory = new CommandFactory();
 
         try {
-            String filePath = "C:\\Users\\USER\\Desktop\\zorkSave.txt";
+            String filePath = "zorkSave.txt";
             File file = new File(filePath);
             Scanner scanner = new Scanner(file);
 

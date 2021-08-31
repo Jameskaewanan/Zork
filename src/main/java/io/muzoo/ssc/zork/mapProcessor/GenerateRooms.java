@@ -19,7 +19,8 @@ public class GenerateRooms extends Room { // Generate Room Objects for the map
         ArrayList<Room> rooms = new ArrayList<Room>();
 
         // Search for map file containing data about the map and its rooms
-        String filePath = "C:\\Users\\USER\\Desktop\\Zork\\src\\main\\MapInfo\\" + filename;
+        String filePath = "/Users/james/Work - University/Software System Construction/Homeworks/Zork/src/main/MapInfo/" + filename;
+
         File file = new File(filePath);
         Scanner scanner = new Scanner(file);
 
@@ -59,7 +60,7 @@ public class GenerateRooms extends Room { // Generate Room Objects for the map
 
         // Scanner to find intro and ending text for each map
 
-        String filePathText = "C:\\Users\\USER\\Desktop\\Zork\\src\\main\\MapInfo\\" + filename + "Text";
+        String filePathText = "/Users/james/Work - University/Software System Construction/Homeworks/Zork/src/main/MapInfo/" + filename + "Text";
         File fileText = new File(filePathText);
         Scanner scannerText = new Scanner(fileText);
 

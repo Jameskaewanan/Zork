@@ -27,7 +27,7 @@ public class SaveCommand extends Command {
 
         game.saveList.remove(game.saveList.size()-1);
 
-        try(FileOutputStream output = new FileOutputStream("/Users/USER/Desktop/zorkSave.txt")){
+        try(FileOutputStream output = new FileOutputStream("zorkSave.txt")){
 
             Iterator<String> iter = game.saveList.iterator();
             PrintWriter print = new PrintWriter(output, true);
