@@ -6,8 +6,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-##  v1.0.0 - 15-06-2021 - Version 1.0.0 Release
-The final version which reaches all project requirements for the System Software Construction Course
+### Added
+- Character Creation: Gender, Race, Class, Name
+- 3 Races, 3 Classes, 12 Skills
+- Combat logic accounts for strength to add damage multiplier
+
+### Removed
+- Player no longer chooses a map, only 1 map is available
+- Player no longer regenerates health after every turn
+
+##  v1.0.0 - 15-06-2021 - VERSION 1.0.0 RELEASE
+The release version which reaches all project requirements for the System Software Construction Course.
+Going forward, this project will not be associated with the course and will become an independent personal project.
+Future updates and changelogs will be more substantial and in-depth and more work will be done to make this project
+a viable game that you might see released as an indie title.
 
 ## v0.4.2 - 14-06-2021 - Load/Save, Combat Logic
 
