@@ -33,8 +33,6 @@ public class PlayCommand extends Command { // Command to indicate that a game se
             return;
         }
 
-
-
         try { // Go to character customization and generate map
             while (characterCreation.getCheck() == 0) {
                 characterCreation.CustomizationProcess();

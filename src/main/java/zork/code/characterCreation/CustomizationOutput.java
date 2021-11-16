@@ -76,14 +76,29 @@ public class CustomizationOutput {
     }
 
     public static void SummaryOutput() {
-        System.out.println("============================================================================================\n");
+        System.out.println("\n============================================================================================\n");
 
-        System.out.println("[ Player Summary ]"); // Display Player Stats
+        System.out.println("[ Player Summary ]\n"); // Display Player Stats
         System.out.println("Name: " + Game.player.name);
         System.out.println("Gender: " + Game.player.gender);
         System.out.println("Race: " + Game.player.race);
-
         System.out.println("Class: " + Game.player.playerClass);
+
+        //  Test to see if stats are applied correctly
+        System.out.print("\nLight Armour: " + Game.player.lightArmour + " | ");
+        System.out.print("Handguns: " + Game.player.handguns + " | ");
+        System.out.print("Melee: " + Game.player.melee + " | ");
+        System.out.print("Speech Craft: " + Game.player.speechcraft + "\n");
+
+        System.out.print("Hacking: " + Game.player.hacking + " | ");
+        System.out.print("Crafting: " + Game.player.crafting + " | ");
+        System.out.print("First Aid: " + Game.player.firstAid + " | ");
+        System.out.print("Marksmanship: " + Game.player.marksmanship + "\n");
+
+        System.out.print("Heavy Armour: " + Game.player.heavyArmour + " | ");
+        System.out.print("Heavy Weapons: " + Game.player.heavyWeapons + " | ");
+        System.out.print("Athletics: " + Game.player.athletics + " | ");
+        System.out.print("Unarmed: " + Game.player.unarmed + "\n");
     }
 
 }
