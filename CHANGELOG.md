@@ -6,16 +6,35 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+##  v1.1.0 - 17-11-2021 - Character Customization
+
+The Character Customization update focuses on allowing the player to choose a race and class that affects their experience
+during gameplay.
+
+There are 3 races in total for the player to choose from, all races have 2 buffs to attributes although these buffs are minor. 
+Each race has a unique passive ability, and a  single unique ability that can be used during combat. (Will be implemented in next update).
+These attributes are: Strength, Agility, Intelligence, Health
+
+There are 3 class for focussing on 3 different play styles the chosen class will provide substantial buffs and debuffs to skills.
+The skills are: 
+
+Light Armour, Handguns, Melee Weapons, Speechcraft 
+Hacking, Crafting, First Aid, Marksmanship
+Heavy Armour, Heavy Weapons, Athletics, Unarmed
+
 ### Added
 - Character Creation: Gender, Race, Class, Name
 - 3 Races, 3 Classes, 12 Skills
 - Combat logic accounts for strength to add damage multiplier
 
-### Removed
-- Player no longer chooses a map, only 1 map is available
+### Changed
 - Player no longer regenerates health after every turn
 
+### Removed
+- Player no longer chooses a map, only 1 map is available
+
 ##  v1.0.0 - 15-06-2021 - VERSION 1.0.0 RELEASE
+
 The release version which reaches all project requirements for the System Software Construction Course.
 Going forward, this project will not be associated with the course and will become an independent personal project.
 Future updates and changelogs will be more substantial and in-depth and more work will be done to make this project
